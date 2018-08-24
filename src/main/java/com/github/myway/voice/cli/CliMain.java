@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.xml.stream.XMLStreamException;
 
+import com.github.myway.voice.draw.MapToImage;
 import com.github.myway.voice.gpx.GpxReader;
 import com.github.myway.voice.gpx.Track;
 import com.github.myway.voice.navigate.Navigator;
@@ -32,5 +33,10 @@ public class CliMain {
 		}
 
 		new Navigator().navigate(null, track, map);
+		try (MapToImage m2i = new MapToImage(map)) {
+			m2i.drawMap();
+			m2i.drawTrack(track);
+			m2i.saveImage();
+		}
 	}
 }
