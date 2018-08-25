@@ -4,14 +4,14 @@ import java.io.IOException;
 
 import javax.xml.stream.XMLStreamException;
 
-import com.github.myway.voice.draw.MapToImage;
+import com.github.myway.osm.MapData;
+import com.github.myway.osm.MapReader;
+import com.github.myway.osm.Node;
+import com.github.myway.osm.Way;
+import com.github.myway.render.MapToImage;
 import com.github.myway.voice.gpx.GpxReader;
 import com.github.myway.voice.gpx.Track;
 import com.github.myway.voice.navigate.Navigator;
-import com.github.myway.voice.osm.MapData;
-import com.github.myway.voice.osm.MapReader;
-import com.github.myway.voice.osm.Node;
-import com.github.myway.voice.osm.Way;
 
 public class CliMain {
 	private static final String TRACK = "src/test/resources/track.gpx";

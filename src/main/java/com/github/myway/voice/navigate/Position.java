@@ -1,6 +1,6 @@
 package com.github.myway.voice.navigate;
 
-import com.github.myway.common.Coordinate;
+import com.github.myway.core.Coordinate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
