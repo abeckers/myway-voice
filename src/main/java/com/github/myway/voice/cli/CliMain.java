@@ -8,6 +8,7 @@ import com.github.myway.osm.MapData;
 import com.github.myway.osm.MapReader;
 import com.github.myway.osm.Node;
 import com.github.myway.osm.Way;
+import com.github.myway.render.AwtDrawableFactory;
 import com.github.myway.render.MapToImage;
 import com.github.myway.voice.gpx.GpxReader;
 import com.github.myway.voice.gpx.Track;
@@ -33,10 +34,10 @@ public class CliMain {
 		}
 
 		new Navigator().navigate(null, track, map);
-		try (MapToImage m2i = new MapToImage(map)) {
+		try (MapToImage m2i = new MapToImage(new AwtDrawableFactory(), map)) {
 			m2i.drawMap();
 			m2i.drawTrack(track);
-			m2i.saveImage();
+			m2i.getDrawable().saveTo("/tmp/map.jpg");
 		}
 	}
 }
